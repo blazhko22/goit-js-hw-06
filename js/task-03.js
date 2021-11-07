@@ -14,18 +14,9 @@ const images = [
 ];
 const imagesEl = document.querySelector("ul.gallery");
 
-imagesEl.insertAdjacentHTML(
-  `afterbegin`,
-  `<li class="imeges__list">
-  <img class="imeges__task" src="https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-        atl="White and Black Long Fur Cat">
-  </li>
-  <li class="imeges__list">
-  <img class="imeges__task" src="https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-        atl="Orange and White Koi Fish Near Yellow Koi Fish">
-  </li>
-  <li class="imeges__list">
-  <img class="imeges__task" src="https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-        atl="Group of Horses Running">
-  </li>`
-);
+images.forEach((el) => {
+  imagesEl.insertAdjacentHTML(
+    `afterbegin`,
+    `<li class="imeges__list"><img class="imeges__task" src="${el.url}" alt="${el.alt}"></li>`
+  );
+});
