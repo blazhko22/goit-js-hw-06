@@ -16,7 +16,7 @@ const imagesEl = document.querySelector("ul.gallery");
 
 images.forEach((el) => {
   imagesEl.insertAdjacentHTML(
-    `afterbegin`,
+    `beforeend`,
     `<li class="imeges__list"><img class="imeges__task" src="${el.url}" alt="${el.alt}"></li>`
   );
 });
