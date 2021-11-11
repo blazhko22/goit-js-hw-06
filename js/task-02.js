@@ -6,37 +6,16 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
-const potatoesEl = document.createElement("li");
-potatoesEl.textContent = "Potatoes";
-potatoesEl.classList.add("item");
-
-const mushroomsEl = document.createElement("li");
-mushroomsEl.textContent = "Mushrooms";
-mushroomsEl.classList.add("item");
-
-const garlicEl = document.createElement("li");
-garlicEl.textContent = "Garlic";
-garlicEl.classList.add("item");
-
-const tomatosEl = document.createElement("li");
-tomatosEl.textContent = "Tomatos";
-tomatosEl.classList.add("item");
-
-const herbsEl = document.createElement("li");
-herbsEl.textContent = "Herbs";
-herbsEl.classList.add("item");
-
-const condimentsEl = document.createElement("li");
-condimentsEl.textContent = "Condiments";
-condimentsEl.classList.add("item");
 
 const ingredientsEl = document.querySelector("ul#ingredients");
 
-ingredientsEl.append(
-  potatoesEl,
-  mushroomsEl,
-  garlicEl,
-  tomatosEl,
-  herbsEl,
-  condimentsEl
-);
+const elements = ingredients.map((element) => {
+  const ingredientEl = document.createElement("li");
+  ingredientEl.textContent = element;
+  ingredientEl.classList.add("item");
+
+  return ingredientEl;
+});
+console.log(elements);
+
+ingredientsEl.append(...elements);
